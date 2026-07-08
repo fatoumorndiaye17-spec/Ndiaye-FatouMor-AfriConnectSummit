@@ -4,7 +4,7 @@
 
 **Nom du projet :** AfriConnect Summit 2026
 
-**Nom de l'étudiante :** Fatou Ndiaye
+**Nom de l'étudiante :**    Ndiaye Fatou Mor
 
 **Classe :** L1 IAGE
 
