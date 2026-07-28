@@ -379,3 +379,15 @@ contactForm.reset();
 });
 
 }
+
+/*======================================================
+OPTIMISATION RESPONSIVE ET CORRECTION
+======================================================*/
+
+window.addEventListener("resize",function(){
+
+if(window.innerWidth>768 && navLinks){
+    navLinks.classList.remove("active");
+}
+
+});
