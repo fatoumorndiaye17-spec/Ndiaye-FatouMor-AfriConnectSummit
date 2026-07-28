@@ -308,3 +308,74 @@ revealElements.forEach(element=>{
 revealObserver.observe(element);
 
 });
+
+// VALIDATION DU FORMULAIRE
+
+const contactForm=document.getElementById("contact-form");
+
+if(contactForm){
+
+contactForm.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const fullname=document.getElementById("fullname");
+const email=document.getElementById("email");
+const phone=document.getElementById("phone");
+const participation=document.getElementById("participation");
+const country=document.getElementById("country");
+const message=document.getElementById("message");
+const successMessage=document.getElementById("success-message");
+
+const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex=/^(\+221)?\s?(7[05678])[0-9\s]{7,12}$/;
+
+let valid=true;
+
+document.querySelectorAll(".error-message").forEach(function(error){
+error.textContent="";
+});
+
+successMessage.textContent="";
+
+if(fullname.value.trim().length<3){
+fullname.nextElementSibling.textContent="Veuillez saisir votre nom complet.";
+valid=false;
+}
+
+if(!emailRegex.test(email.value.trim())){
+email.nextElementSibling.textContent="Adresse email invalide.";
+valid=false;
+}
+
+if(!phoneRegex.test(phone.value.trim())){
+phone.nextElementSibling.textContent="Numéro de téléphone invalide.";
+valid=false;
+}
+
+if(participation.value===""){
+participation.nextElementSibling.textContent="Choisissez un type de participation.";
+valid=false;
+}
+
+if(country.value===""){
+country.nextElementSibling.textContent="Choisissez votre pays.";
+valid=false;
+}
+
+if(message.value.trim().length<20){
+message.nextElementSibling.textContent="Votre message doit contenir au moins 20 caractères.";
+valid=false;
+}
+
+if(valid){
+
+successMessage.textContent="Votre inscription a été envoyée avec succès.";
+
+contactForm.reset();
+
+}
+
+});
+
+}
