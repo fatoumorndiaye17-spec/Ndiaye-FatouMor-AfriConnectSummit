@@ -391,3 +391,10 @@ if(window.innerWidth>768 && navLinks){
 }
 
 });
+/* Vérification finale */
+
+document.querySelectorAll("img").forEach(function(image){
+    if(!image.alt){
+        image.alt="Image AfriConnect Summit";
+    }
+});
